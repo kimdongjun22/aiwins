@@ -20,3 +20,6 @@ chroma_*/
 security_rag/data/chroma_db/
 security_rag/data/raw/
 security_rag/data/tfidf_vectorizer.pkl
+security_rag_advance/data/chroma_db/
+security_rag_advance/data/raw/
+security_rag_advance/data/tfidf_vectorizer.pkl

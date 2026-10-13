@@ -1,0 +1,1502 @@
+[
+  {
+    "cve_id": "CVE-2021-44228",
+    "cwe_ids": [
+      "CWE-20",
+      "CWE-400",
+      "CWE-502",
+      "CWE-917"
+    ],
+    "cvss_score": 10.0,
+    "severity": "CRITICAL",
+    "published": "2021-12-10",
+    "description": "Apache Log4j2 2.0-beta9 through 2.15.0 (excluding security releases 2.12.2, 2.12.3, and 2.3.1) JNDI features used in configuration, log messages, and parameters do not protect against attacker controlled LDAP and other JNDI related endpoints. An attacker who can control log messages or log message parameters can execute arbitrary code loaded from LDAP servers when message lookup substitution is enabled. From log4j 2.15.0, this behavior has been disabled by default. From version 2.16.0 (along with 2.12.2, 2.12.3, and 2.3.1), this functionality has been completely removed. Note that this vulnerability is specific to log4j-core and does not affect log4net, log4cxx, or other Apache Logging Services projects.",
+    "epss": 0.99999,
+    "epss_percentile": 1.0,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Apache",
+      "product": "Log4j2",
+      "name": "Apache Log4j2 Remote Code Execution Vulnerability",
+      "date_added": "2021-12-10",
+      "due_date": "2021-12-24",
+      "required_action": "For all affected software assets for which updates exist, the only acceptable remediation actions are: 1) Apply updates; OR 2) remove affected assets from agency networks. Temporary mitigations using one of the measures provided at https://www.cisa.gov/uscert/ed-22-02-apache-log4j-recommended-mitigation-measures are only acceptable until updates are available.",
+      "short_description": "Apache Log4j2 contains a vulnerability where JNDI features do not protect against attacker-controlled JNDI-related endpoints, allowing for remote code execution.",
+      "ransomware": "Known"
+    },
+    "references": [
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/12/10/1",
+        "tags": [
+          "Mailing List",
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/12/10/2",
+        "tags": [
+          "Mailing List",
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/M5CSVUNV4HWZZXGOKNSK6L7RPM7BOKIB/",
+        "tags": [
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/VU57UJDCFIASIO35GC55JMKSRXJMCDFM/",
+        "tags": [
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://logging.apache.org/log4j/2.x/security.html",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://msrc-blog.microsoft.com/2021/12/11/microsofts-response-to-cve-2021-44228-apache-log4j2/",
+        "tags": [
+          "Patch",
+          "Third Party Advisory",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuapr2022.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2022.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/12/10/1",
+        "tags": [
+          "Mailing List",
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/12/10/2",
+        "tags": [
+          "Mailing List",
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/M5CSVUNV4HWZZXGOKNSK6L7RPM7BOKIB/",
+        "tags": [
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/VU57UJDCFIASIO35GC55JMKSRXJMCDFM/",
+        "tags": [
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://logging.apache.org/log4j/2.x/security.html",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://msrc-blog.microsoft.com/2021/12/11/microsofts-response-to-cve-2021-44228-apache-log4j2/",
+        "tags": [
+          "Patch",
+          "Third Party Advisory",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpuapr2022.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2022.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:25:34+00:00"
+  },
+  {
+    "cve_id": "CVE-2021-45046",
+    "cwe_ids": [
+      "CWE-917"
+    ],
+    "cvss_score": 9.0,
+    "severity": "CRITICAL",
+    "published": "2021-12-14",
+    "description": "It was found that the fix to address CVE-2021-44228 in Apache Log4j 2.15.0 was incomplete in certain non-default configurations. This could allows attackers with control over Thread Context Map (MDC) input data when the logging configuration uses a non-default Pattern Layout with either a Context Lookup (for example, $${ctx:loginId}) or a Thread Context Map pattern (%X, %mdc, or %MDC) to craft malicious input data using a JNDI Lookup pattern resulting in an information leak and remote code execution in some environments and local code execution in all environments. Log4j 2.16.0 (Java 8) and 2.12.2 (Java 7) fix this issue by removing support for message lookup patterns and disabling JNDI functionality by default.",
+    "epss": 0.99977,
+    "epss_percentile": 0.9998,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Apache",
+      "product": "Log4j2",
+      "name": "Apache Log4j2 Deserialization of Untrusted Data Vulnerability",
+      "date_added": "2023-05-01",
+      "due_date": "2023-05-22",
+      "required_action": "Apply updates per vendor instructions.",
+      "short_description": "Apache Log4j2 contains a deserialization of untrusted data vulnerability due to the incomplete fix of CVE-2021-44228, where the Thread Context Lookup Pattern is vulnerable to remote code execution in certain non-default configurations.",
+      "ransomware": "Known"
+    },
+    "references": [
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/12/14/4",
+        "tags": [
+          "Mailing List",
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/EOKPQGV24RRBBI4TBZUDQMM4MEH7MXCY/",
+        "tags": [
+          "Mailing List",
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/SIG7FZULMNK2XF6FZRU4VWYDQXNMUGAJ/",
+        "tags": [
+          "Mailing List",
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://logging.apache.org/log4j/2.x/security.html",
+        "tags": [
+          "Mitigation",
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2022.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "http://www.openwall.com/lists/oss-security/2021/12/14/4",
+        "tags": [
+          "Mailing List",
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/EOKPQGV24RRBBI4TBZUDQMM4MEH7MXCY/",
+        "tags": [
+          "Mailing List",
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/SIG7FZULMNK2XF6FZRU4VWYDQXNMUGAJ/",
+        "tags": [
+          "Mailing List",
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://logging.apache.org/log4j/2.x/security.html",
+        "tags": [
+          "Mitigation",
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujan2022.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:25:37+00:00"
+  },
+  {
+    "cve_id": "CVE-2022-22965",
+    "cwe_ids": [
+      "CWE-94"
+    ],
+    "cvss_score": 9.8,
+    "severity": "CRITICAL",
+    "published": "2022-04-01",
+    "description": "A Spring MVC or Spring WebFlux application running on JDK 9+ may be vulnerable to remote code execution (RCE) via data binding. The specific exploit requires the application to run on Tomcat as a WAR deployment. If the application is deployed as a Spring Boot executable jar, i.e. the default, it is not vulnerable to the exploit. However, the nature of the vulnerability is more general, and there may be other ways to exploit it.",
+    "epss": 0.99638,
+    "epss_percentile": 0.99949,
+    "kev": {
+      "listed": true,
+      "vendor_project": "VMware",
+      "product": "Spring Framework",
+      "name": "Spring Framework JDK 9+ Remote Code Execution Vulnerability",
+      "date_added": "2022-04-04",
+      "due_date": "2022-04-25",
+      "required_action": "Apply updates per vendor instructions.",
+      "short_description": "Spring MVC or Spring WebFlux application running on JDK 9+ may be vulnerable to remote code execution (RCE) via data binding.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-254054.pdf",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://tanzu.vmware.com/security/cve-2022-22965",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujul2022.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-254054.pdf",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://tanzu.vmware.com/security/cve-2022-22965",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://www.oracle.com/security-alerts/cpujul2022.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:25:40+00:00"
+  },
+  {
+    "cve_id": "CVE-2017-5638",
+    "cwe_ids": [
+      "CWE-755"
+    ],
+    "cvss_score": 9.8,
+    "severity": "CRITICAL",
+    "published": "2017-03-11",
+    "description": "The Jakarta Multipart parser in Apache Struts 2 2.3.x before 2.3.32 and 2.5.x before 2.5.10.1 has incorrect exception handling and error-message generation during file-upload attempts, which allows remote attackers to execute arbitrary commands via a crafted Content-Type, Content-Disposition, or Content-Length HTTP header, as exploited in the wild in March 2017 with a Content-Type header containing a #cmd= string.",
+    "epss": 0.99999,
+    "epss_percentile": 0.99994,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Apache",
+      "product": "Struts",
+      "name": "Apache Struts Remote Code Execution Vulnerability",
+      "date_added": "2021-11-03",
+      "due_date": "2022-05-03",
+      "required_action": "Apply updates per vendor instructions.",
+      "short_description": "Apache Struts Jakarta Multipart parser allows for malicious file upload using the Content-Type value, leading to remote code execution.",
+      "ransomware": "Known"
+    },
+    "references": [
+      {
+        "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2017-3236622.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://cwiki.apache.org/confluence/display/WW/S2-045",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://cwiki.apache.org/confluence/display/WW/S2-046",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://struts.apache.org/docs/s2-045.html",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://struts.apache.org/docs/s2-046.html",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2017-3236622.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://cwiki.apache.org/confluence/display/WW/S2-045",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://cwiki.apache.org/confluence/display/WW/S2-046",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://struts.apache.org/docs/s2-045.html",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://struts.apache.org/docs/s2-046.html",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:25:43+00:00"
+  },
+  {
+    "cve_id": "CVE-2014-6271",
+    "cwe_ids": [
+      "CWE-78"
+    ],
+    "cvss_score": 9.8,
+    "severity": "CRITICAL",
+    "published": "2014-09-24",
+    "description": "GNU Bash through 4.3 processes trailing strings after function definitions in the values of environment variables, which allows remote attackers to execute arbitrary code via a crafted environment, as demonstrated by vectors involving the ForceCommand feature in OpenSSH sshd, the mod_cgi and mod_cgid modules in the Apache HTTP Server, scripts executed by unspecified DHCP clients, and other situations in which setting the environment occurs across a privilege boundary from Bash execution, aka \"ShellShock.\"  NOTE: the original fix for this issue was incorrect; CVE-2014-7169 has been assigned to cover the vulnerability that is still present after the incorrect fix.",
+    "epss": 0.99999,
+    "epss_percentile": 0.99993,
+    "kev": {
+      "listed": true,
+      "vendor_project": "GNU",
+      "product": "Bourne-Again Shell (Bash)",
+      "name": "GNU Bourne-Again Shell (Bash) Arbitrary Code Execution Vulnerability",
+      "date_added": "2022-01-28",
+      "due_date": "2022-07-28",
+      "required_action": "Apply updates per vendor instructions.",
+      "short_description": "GNU Bash through 4.3 processes trailing strings after function definitions in the values of environment variables, which allows remote attackers to execute code.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "http://jvn.jp/en/jp/JVN55667175/index.html",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597",
+        "tags": [
+          "Issue Tracking",
+          "Patch"
+        ]
+      },
+      {
+        "url": "http://jvn.jp/en/jp/JVN55667175/index.html",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126",
+        "tags": [
+          "Third Party Advisory",
+          "VDB Entry",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597",
+        "tags": [
+          "Issue Tracking",
+          "Patch"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:25:46+00:00"
+  },
+  {
+    "cve_id": "CVE-2015-5477",
+    "cwe_ids": [
+      "CWE-19",
+      "CWE-617"
+    ],
+    "cvss_score": 7.5,
+    "severity": "HIGH",
+    "published": "2015-07-29",
+    "description": "named in ISC BIND 9.x before 9.9.7-P2 and 9.10.x before 9.10.2-P3 allows remote attackers to cause a denial of service (REQUIRE assertion failure and daemon exit) via TKEY queries.",
+    "epss": 0.99409,
+    "epss_percentile": 0.99941,
+    "kev": {
+      "listed": true,
+      "vendor_project": "ISC",
+      "product": "BIND",
+      "name": " ISC BIND Data Processing Errors Vulnerability",
+      "date_added": "2026-10-08",
+      "due_date": "2026-10-11",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "ISC BIND contains a data processing errors vulnerability that could allow remote attackers to cause a denial of service via TKEY queries.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10718",
+        "tags": [
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://kb.isc.org/article/AA-01272",
+        "tags": [
+          "Patch",
+          "Vendor Advisory",
+          "Broken Link"
+        ]
+      },
+      {
+        "url": "http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10718",
+        "tags": [
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://kb.isc.org/article/AA-01272",
+        "tags": [
+          "Patch",
+          "Vendor Advisory",
+          "Broken Link"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:25:48+00:00"
+  },
+  {
+    "cve_id": "CVE-2016-3081",
+    "cwe_ids": [
+      "CWE-77"
+    ],
+    "cvss_score": 8.1,
+    "severity": "HIGH",
+    "published": "2016-04-26",
+    "description": "Apache Struts 2.3.19 to 2.3.20.2, 2.3.21 to 2.3.24.1, and 2.3.25 to 2.3.28, when Dynamic Method Invocation is enabled, allow remote attackers to execute arbitrary code via method: prefix, related to chained expressions.",
+    "epss": 0.96052,
+    "epss_percentile": 0.99877,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Apache",
+      "product": "Struts",
+      "name": "Apache Struts Command Injection Vulnerability",
+      "date_added": "2026-10-08",
+      "due_date": "2026-10-11",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "Apache Struts contains a command injection vulnerability that could allow remote attackers to execute arbitrary code via method:prefix when Dynamic Method Invocation is enabled.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://struts.apache.org/docs/s2-032.html",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html",
+        "tags": [
+          "Patch",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://struts.apache.org/docs/s2-032.html",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:25:51+00:00"
+  },
+  {
+    "cve_id": "CVE-2023-22894",
+    "cwe_ids": [
+      "CWE-312"
+    ],
+    "cvss_score": 4.9,
+    "severity": "MEDIUM",
+    "published": "2023-04-19",
+    "description": "Strapi through 4.5.5 allows attackers (with access to the admin panel) to discover sensitive user details by exploiting the query filter. The attacker can filter users by columns that contain sensitive information and infer a value from API responses. If the attacker has super admin access, then this can be exploited to discover the password hash and password reset token of all users. If the attacker has admin panel access to an account with permission to access the username and email of API users with a lower privileged role (e.g., Editor or Author), then this can be exploited to discover sensitive information for all API users but not other admin accounts.",
+    "epss": 0.03609,
+    "epss_percentile": 0.89211,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Strapi",
+      "product": "Strapi",
+      "name": "Strapi Cleartext Storage of Sensitive Information Vulnerability",
+      "date_added": "2026-10-08",
+      "due_date": "2026-10-11",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "Strapi contains a cleartext storage of sensitive information vulnerability that could allow attackers with access to the admin panel to discover sensitive user details via the query filter. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version. This vulnerability can be chained with CVE-2023-22621 to achieve remote code execution. ",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://github.com/strapi/strapi/releases",
+        "tags": [
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://strapi.io/blog/security-disclosure-of-vulnerabilities-cve",
+        "tags": [
+          "Exploit",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/strapi/strapi/releases",
+        "tags": [
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://strapi.io/blog/security-disclosure-of-vulnerabilities-cve",
+        "tags": [
+          "Exploit",
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:25:55+00:00"
+  },
+  {
+    "cve_id": "CVE-2021-3199",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "cvss_score": 9.8,
+    "severity": "CRITICAL",
+    "published": "2021-01-26",
+    "description": "Directory traversal with remote code execution can occur in /upload in ONLYOFFICE Document Server before 5.6.3, when JWT is used, via a /.. sequence in an image upload parameter.",
+    "epss": 0.19352,
+    "epss_percentile": 0.97297,
+    "kev": {
+      "listed": true,
+      "vendor_project": "ONLYOFFICE",
+      "product": "Docs",
+      "name": "ONLYOFFICE Docs Server Path Traversal Vulnerability",
+      "date_added": "2026-10-08",
+      "due_date": "2026-10-11",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "ONLYOFFICE Docs contains a path traversal vulnerability that can occur when JWT is used, via a /.. sequence in an image upload parameter and could allow for remote code execution.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://github.com/ONLYOFFICE/DocumentServer/blob/903fe5ab7a275bd69c3c3346af2d21cf87ebeabf/CHANGELOG.md#563",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://github.com/ONLYOFFICE/DocumentServer/blob/903fe5ab7a275bd69c3c3346af2d21cf87ebeabf/CHANGELOG.md#563",
+        "tags": [
+          "Release Notes",
+          "Third Party Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:25:59+00:00"
+  },
+  {
+    "cve_id": "CVE-2015-3306",
+    "cwe_ids": [
+      "CWE-284"
+    ],
+    "cvss_score": 10.0,
+    "severity": "CRITICAL",
+    "published": "2015-05-18",
+    "description": "The mod_copy module in ProFTPD 1.3.5 allows remote attackers to read and write to arbitrary files via the site cpfr and site cpto commands.",
+    "epss": 0.99497,
+    "epss_percentile": 0.99945,
+    "kev": {
+      "listed": true,
+      "vendor_project": "ProFTPD",
+      "product": "ProFTPD",
+      "name": "ProFTPD Improper Access Control Vulnerability",
+      "date_added": "2026-10-08",
+      "due_date": "2026-10-11",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "ProFTPD contains an improper access control vulnerability that could allow remote attackers to read and write to arbitrary files via the site cpfr and site cpto commands.",
+      "ransomware": "Unknown"
+    },
+    "references": [],
+    "fetched_at": "2026-10-13T08:26:02+00:00"
+  },
+  {
+    "cve_id": "CVE-2026-88779",
+    "cwe_ids": [
+      "CWE-119"
+    ],
+    "cvss_score": 7.5,
+    "severity": "HIGH",
+    "published": "2026-10-04",
+    "description": "Vulnerability in NetScaler ADC and NetScaler Gateway.\n\nThis issue affects ADC: before 14.1-73.41, before 13.1-64.28, before 14.1-73.41 FIPS, and before 13.1-37.282; Gateway: before 14.1-73.41 and before 13.1-64.28.",
+    "epss": 0.00592,
+    "epss_percentile": 0.4677,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Citrix",
+      "product": "NetScaler",
+      "name": "Citrix NetScaler Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+      "date_added": "2026-10-04",
+      "due_date": "2026-10-07",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "Citrix NetScaler ADC (formerly Citrix ADC) and Citrix NetScaler Gateway (formerly Citrix Gateway) contain an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow for a denial of service.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697174",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://community.citrix.com/techzone-blogs/110_security-updates/understanding-and-addressing-cve-2026-88779-in-citrix-netscaler-adc-and-citrix-netscaler-gateway/",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:04+00:00"
+  },
+  {
+    "cve_id": "CVE-2026-102490",
+    "cwe_ids": [
+      "CWE-269"
+    ],
+    "cvss_score": 7.8,
+    "severity": "HIGH",
+    "published": "2026-09-30",
+    "description": "Zammad packages built with packager.io (DEB and RPM) could have allowed a local attacker who already had file system write privileges as the unprivileged zammad service account to escalate to full root privileges on the host. Service processes began running as root and executed files that were owned and writable by the zammad account before dropping their identity to that account. An attacker holding that foothold could have escalated within seconds, because the affected services were restarted automatically whenever they stopped; no administrator interaction was required. Only installations from the DEB and RPM packages were affected — installations from source or the official container images were not. All released packaged versions were affected.",
+    "epss": 0.0055,
+    "epss_percentile": 0.44407,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Zammad GmbH",
+      "product": "Zammad",
+      "name": "Zammad GmbH Zammad Improper Privilege Management Vulnerability",
+      "date_added": "2026-10-02",
+      "due_date": "2026-10-05",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "Zammad GmbH Zammad contains an improper privilege management vulnerability that can allow the local zammad user to escalate privileges to root. This vulnerability can be chained with CVE-2026-102489.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://github.com/zammad/zammad/security/advisories/GHSA-p97w-927q-8vxq",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://zammad.com/en/advisories/cve-2026-102489-cve-2026-102490",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:07+00:00"
+  },
+  {
+    "cve_id": "CVE-2026-102489",
+    "cwe_ids": [
+      "CWE-384"
+    ],
+    "cvss_score": 9.8,
+    "severity": "CRITICAL",
+    "published": "2026-09-30",
+    "description": "Zammad versions 6.3.0 to 6.5.4 are vulnerable a session hijack vulnerability that leads to remote code execution as the zammad user. The bug is also present in version 7.0.0 to version 7.1.2, but not exploitable due to changes in the underlying framework.",
+    "epss": 0.01255,
+    "epss_percentile": 0.687,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Zammad GmbH",
+      "product": "Zammad",
+      "name": "Zammad GmbH Zammad Session Fixation Vulnerability",
+      "date_added": "2026-10-02",
+      "due_date": "2026-10-05",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "Zammad GmbH Zammad contains a session fixation vulnerability that can lead to remote code execution as the zammad user. This vulnerability can be chained with CVE-2026-102490.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://community.zammad.org/t/take-care-local-privilege-escalation-cve-2026-102490-is-reported-as-being-actively-exploited/21297/2",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://zammad.com/en/advisories/cve-2026-102489-cve-2026-102490",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:10+00:00"
+  },
+  {
+    "cve_id": "CVE-2026-104286",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "cvss_score": 9.8,
+    "severity": "CRITICAL",
+    "published": "2026-10-01",
+    "description": "An improper limitation of a pathname to a restricted directory ('path traversal') vulnerability in Fortinet FortiMail 8.0.0 through 8.0.1, FortiMail 7.6.0 through 7.6.6, FortiMail 7.4.0 through 7.4.8, FortiMail 7.2.0 through 7.2.9 may allow an unauthenticated attacker to write arbitrary files on the underlying system via crafted HTTP or HTTPS requests.",
+    "epss": 0.02201,
+    "epss_percentile": 0.82034,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Fortinet",
+      "product": "FortiMail",
+      "name": "Fortinet FortiMail Path Traversal Vulnerability",
+      "date_added": "2026-10-01",
+      "due_date": "2026-10-04",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "Fortinet FortiMail contains a path traversal and an improper neutralization of NULL byte or NULL character vulnerability that may allow an unauthenticated attacker to write arbitrary files on the underlying system via crafted HTTP or HTTPS requests.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://fortiguard.fortinet.com/psirt/FG-IR-26-175",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:13+00:00"
+  },
+  {
+    "cve_id": "CVE-2026-76504",
+    "cwe_ids": [
+      "CWE-177"
+    ],
+    "cvss_score": 9.8,
+    "severity": "CRITICAL",
+    "published": "2026-09-30",
+    "description": "A vulnerability in the API session-based authentication management of Cisco Catalyst SD-WAN Manager could allow an unauthenticated, remote attacker to access an affected system with privileges of the admin user.\r\n\r\nThis vulnerability is due to improper handling of URI encoding in an HTTP request, which allows the request to bypass an authentication rule that is intended to restrict access to a specific API endpoint. An attacker could exploit this vulnerability by sending a crafted HTTP request to the API of the affected system. A successful exploit could allow the attacker to bypass authentication and gain access to the API as the admin user.",
+    "epss": 0.01819,
+    "epss_percentile": 0.78155,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Cisco",
+      "product": "Catalyst SD-WAN Manager",
+      "name": "Cisco Catalyst SD-WAN Manager Hex Encoding Vulnerability",
+      "date_added": "2026-09-30",
+      "due_date": "2026-10-03",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "Cisco Catalyst SD-WAN Manager contains a hex encoding vulnerability that could allow an unauthenticated, remote attacker to access an affected system with privileges of the admin user due to improper handling of URI encoding in an HTTP request.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-webauth-xr8beuuU",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:16+00:00"
+  },
+  {
+    "cve_id": "CVE-2026-86950",
+    "cwe_ids": [
+      "CWE-787"
+    ],
+    "cvss_score": 8.8,
+    "severity": "HIGH",
+    "published": "2026-09-28",
+    "description": "An out-of-bounds write issue was addressed with improved bounds checking. This issue is fixed in iOS 26.7.1 and iPadOS 26.7.1, macOS Sequoia 15.8.1, macOS Tahoe 26.7.1. Processing a maliciously crafted file may lead to arbitrary code execution. Apple is aware of a report that this issue may have been exploited in an extremely sophisticated attack against specific targeted individuals on versions of iOS before iOS 27.",
+    "epss": 0.01242,
+    "epss_percentile": 0.68378,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Apple",
+      "product": "Multiple Products",
+      "name": "Apple Multiple Products Out-of-Bounds Write Vulnerability",
+      "date_added": "2026-09-29",
+      "due_date": "2026-10-13",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "Apple iOS, macOS, and iPadOS contain an out-of-bounds write vulnerability in CoreGraphics that may lead to arbitrary code execution.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://support.apple.com/en-us/149226",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://support.apple.com/en-us/149228",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://support.apple.com/en-us/149229",
+        "tags": [
+          "Release Notes",
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:18+00:00"
+  },
+  {
+    "cve_id": "CVE-2026-88772",
+    "cwe_ids": [
+      "CWE-119"
+    ],
+    "cvss_score": 8.1,
+    "severity": "HIGH",
+    "published": "2026-09-27",
+    "description": "Vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway.\n\nThis issue affects ADC: before 14.1-73.37, before 13.1-64.23, before 14.1-73.37 FIPS, and before 13.1.37.279 FIPS and NDcPP; Gateway: before 14.1-73.37 and before 13.1-64.23 leading to Remote Code Execution or Denial of Service",
+    "epss": 0.01301,
+    "epss_percentile": 0.69679,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Citrix",
+      "product": "NetScaler",
+      "name": "Citrix NetScaler Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+      "date_added": "2026-09-27",
+      "due_date": "2026-09-30",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "Citrix NetScaler ADC and NetScaler Gateway contain an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow for remote code execution or denial of service",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096&articleTitle=Citrix_NetScaler_ADC_and_Citrix_NetScaler_Gateway_Security_Bulletin_for_CVE_2026_88771_CVE_2026_88772_CVE_2026_88773_CVE_2026_88774_CVE_2026_88775_CVE_2026_88776_CVE_2026_88777_and_CVE_2026_88778",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:20+00:00"
+  },
+  {
+    "cve_id": "CVE-2026-88771",
+    "cwe_ids": [
+      "CWE-20"
+    ],
+    "cvss_score": 9.8,
+    "severity": "CRITICAL",
+    "published": "2026-09-27",
+    "description": "Improper input validation vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway.\n\nThis issue affects ADC: before 14.1-73.37, before 13.1-64.23, before 14.1-73.37 FIPS, and before 13.1.37.279 FIPS and NDcPP; Gateway: before 14.1-73.37 and before 13.1-64.23 leading to an unauthenticated attacker to execute arbitrary commands.",
+    "epss": 0.01083,
+    "epss_percentile": 0.64281,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Citrix",
+      "product": "NetScaler",
+      "name": "Citrix NetScaler Improper Input Validation Vulnerability",
+      "date_added": "2026-09-27",
+      "due_date": "2026-09-30",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "Citrix NetScaler ADC and NetScaler Gateway contain an improper input validation vulnerability that could allow an unauthenticated attacker to execute arbitrary commands.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://support.citrix.com/support-home/kbsearch/article?articleNumber=CTX697096",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:23+00:00"
+  },
+  {
+    "cve_id": "CVE-2026-67279",
+    "cwe_ids": [
+      "CWE-841"
+    ],
+    "cvss_score": 6.5,
+    "severity": "MEDIUM",
+    "published": "2026-09-05",
+    "description": "RouterOS SSH enters the connection protocol after a client-requested rekey even though user authentication was never attempted, allowing an unauthenticated client to open a session channel and send an exec request. On affected builds the server dispatches the command, enabling unauthenticated creation, overwrite, and reconstruction of files in the RouterOS managed file namespace, including support files containing configuration and diagnostic data.This issue was fixed in versions: 6.49.21 (Long-term), 7.23.4 (Long-term) and 7.24.2 (Stable)",
+    "epss": 0.01027,
+    "epss_percentile": 0.62636,
+    "kev": {
+      "listed": true,
+      "vendor_project": "MikroTik",
+      "product": "RouterOS",
+      "name": "Mikrotik RouterOS Improper Enforcement of Behavioral Workflow Vulnerability",
+      "date_added": "2026-09-25",
+      "due_date": "2026-09-28",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "Mikrotik RouterOS contains an improper enforcement of behavioral workflow vulnerability that could allow an unauthenticated client to open a session channel and send an exec request. This vulnerability can be chained to achieve unauthenticated exploitation of CVE-2026-86060.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://cert.pl/en/posts/2026/09/vulnerabilities-in-mikrotik-routeros-actively-exploited/",
+        "tags": [
+          "Mitigation",
+          "Third Party Advisory"
+        ]
+      },
+      {
+        "url": "https://forum.mikrotik.com/t/6-49-21-long-term-is-released/272802",
+        "tags": [
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://forum.mikrotik.com/t/7-23-4-long-term-is-released/272801",
+        "tags": [
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://forum.mikrotik.com/t/7-24-2-stable-is-released/272800",
+        "tags": [
+          "Release Notes"
+        ]
+      },
+      {
+        "url": "https://mikrotik.com/supportsec/september-2026-vulnerability/",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:26+00:00"
+  },
+  {
+    "cve_id": "CVE-2026-65660",
+    "cwe_ids": [
+      "CWE-94"
+    ],
+    "cvss_score": 8.8,
+    "severity": "HIGH",
+    "published": "2026-08-11",
+    "description": "Improper control of generation of code ('code injection') in Microsoft Office SharePoint allows an authorized attacker to execute code over a network.",
+    "epss": 0.02101,
+    "epss_percentile": 0.81203,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Microsoft",
+      "product": "SharePoint",
+      "name": "Microsoft SharePoint Code Injection Vulnerability",
+      "date_added": "2026-09-25",
+      "due_date": "2026-09-28",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "Microsoft SharePoint contains a code injection vulnerability which could allow an authorized attacker to execute code over a network.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-65660",
+        "tags": [
+          "Patch",
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:28+00:00"
+  },
+  {
+    "cve_id": "CVE-2026-87902",
+    "cwe_ids": [
+      "CWE-98"
+    ],
+    "cvss_score": 8.1,
+    "severity": "HIGH",
+    "published": "2026-09-22",
+    "description": "An unauthenticated attacker can make `get_page_template()` page-template resolution include a chosen readable local `.php` file outside the active theme directories. If relevant pre-conditions for both the server and the active theme are met, this can lead to RCE.",
+    "epss": 0.39979,
+    "epss_percentile": 0.986,
+    "kev": {
+      "listed": true,
+      "vendor_project": "WordPress",
+      "product": "Core",
+      "name": "WordPress Core Remote File Inclusion Vulnerability",
+      "date_added": "2026-09-25",
+      "due_date": "2026-09-28",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "WordPress Core contains a remote file inclusion vulnerability which could allow an unauthenticated attacker to make page-template resolution include a chosen readable local `.php` file outside the active theme directories, leading to remote code execution.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-7hp8-65ch-5whp",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:31+00:00"
+  },
+  {
+    "cve_id": "CVE-2026-5430",
+    "cwe_ids": [
+      "CWE-347"
+    ],
+    "cvss_score": 10.0,
+    "severity": "CRITICAL",
+    "published": "2026-08-06",
+    "description": "The JWT authentication mechanism accepts tokens signed with algorithms other than those explicitly configured or supported. This allows an attacker to craft a JWT with an unsupported algorithm, which is then incorrectly validated, leading to unauthorized access.\n\nSuccessful exploitation of this vulnerability may result in unauthorized access to the system, including the potential compromise of administrative accounts and full account takeover. The CVSS score is adjusted to 9.8 (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H) in single-tenant deployments, reflecting that the impact is contained within a single security authority boundary.",
+    "epss": 0.00588,
+    "epss_percentile": 0.46612,
+    "kev": {
+      "listed": true,
+      "vendor_project": "WSO2",
+      "product": "Multiple Products",
+      "name": "WSO2 Multiple Products Path Traversal Vulnerability ",
+      "date_added": "2026-09-24",
+      "due_date": "2026-09-27",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "WSO2 API Control Plane, API Manager, Traffic Manager & Universal Gateway contain a path traversal vulnerability that could allow for unrestricted file upload and lead to remote code execution. ",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://security.docs.wso2.com/en/latest/security-announcements/security-advisories/2026/WSO2-2026-5328/",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:34+00:00"
+  },
+  {
+    "cve_id": "CVE-2026-71362",
+    "cwe_ids": [
+      "CWE-863"
+    ],
+    "cvss_score": 9.1,
+    "severity": "CRITICAL",
+    "published": "2026-08-11",
+    "description": "Adobe Commerce is affected by an Incorrect Authorization vulnerability that could result in privilege escalation. An attacker could leverage this vulnerability to gain elevated access to sensitive resources. Exploitation of this issue does not require user interaction.",
+    "epss": 0.87507,
+    "epss_percentile": 0.99756,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Adobe",
+      "product": "Commerce and Magento ",
+      "name": "Adobe Commerce and Magento Incorrect Authorization Vulnerability ",
+      "date_added": "2026-09-24",
+      "due_date": "2026-09-27",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "Adobe Commerce and Magento contains an incorrect authorization vulnerability that could allow an attacker to leverage this vulnerability to gain elevated access to sensitive resources without any user interaction. ",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://helpx.adobe.com/security/products/magento/apsb26-92.html",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:36+00:00"
+  },
+  {
+    "cve_id": "CVE-2026-93952",
+    "cwe_ids": [
+      "CWE-20"
+    ],
+    "cvss_score": 10.0,
+    "severity": "CRITICAL",
+    "published": "2026-09-22",
+    "description": "VeloCloud Orchestrator (VCO) on-prem has a security issue where this issue may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.\n\nHosted, including Dedicated, versions of VCO were impacted and have already been patched.",
+    "epss": 0.01062,
+    "epss_percentile": 0.63663,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Arista",
+      "product": "VeloCloud Orchestrator",
+      "name": "Arista VeloCloud Orchestrator Improper Input Validation Vulnerability",
+      "date_added": "2026-09-22",
+      "due_date": "2026-09-25",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "Arista VeloCloud Orchestrator (VCO) on-prem contains an improper input validation vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://www.arista.com/en/support/advisories-notices/security-advisory/24765-security-advisory-0183",
+        "tags": [
+          "Mitigation",
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:38+00:00"
+  },
+  {
+    "cve_id": "CVE-2026-94127",
+    "cwe_ids": [
+      "CWE-122"
+    ],
+    "cvss_score": 9.8,
+    "severity": "CRITICAL",
+    "published": "2026-09-22",
+    "description": "When a BIG-IP APM access policy and an OAuth profile are configured on a virtual server, specific malicious traffic can lead to remote code execution (RCE). This vulnerability is only present when BIG-IP APM is configured as an OAuth Authorization Server. Deployments using APM strictly as an OAuth Client / Resource Server (without OAuth authorization server profiles configured) are not affected by this vulnerability.\n\nImpact:\nThis vulnerability allows an unauthenticated attacker to perform remote code execution. The BIG-IP system in Appliance mode is also vulnerable. This is a data plane issue; there is no control plane exposure.\n\n \n\n\nNote: Software versions which have reached End of Technical Support (EoTS) are not evaluated.",
+    "epss": 0.02226,
+    "epss_percentile": 0.82242,
+    "kev": {
+      "listed": true,
+      "vendor_project": "F5",
+      "product": "BIG-IP APM",
+      "name": "F5 BIG-IP APM Heap-based Buffer Overflow Vulnerability",
+      "date_added": "2026-09-22",
+      "due_date": "2026-09-25",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "F5 BIG-IP APM contains a heap-based buffer overflow vulnerability when access policy and an OAuth profile are configured on a virtual server. This vulnerability could allow an unauthenticated attacker to perform remote code execution.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://my.f5.com/manage/s/article/K000162605",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:41+00:00"
+  },
+  {
+    "cve_id": "CVE-2026-93616",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "cvss_score": 9.8,
+    "severity": "CRITICAL",
+    "published": "2026-09-22",
+    "description": "A directory traversal and file upload vulnerability allows an unauthenticated attacker to upload and execute arbitrary scripts on Check Point Management Server.",
+    "epss": 0.19654,
+    "epss_percentile": 0.97338,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Check Point",
+      "product": "Multiple Products",
+      "name": "Check Point Multiple Products Path Traversal Vulnerability",
+      "date_added": "2026-09-22",
+      "due_date": "2026-09-25",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "Check Point Security Management Server, Multi-Domain Security Management Server, Log Server, Multi-Domain Log Server, and SmartEvent contain a path traversal vulnerability that allows an unauthenticated attacker to upload and execute arbitrary scripts.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://support.checkpoint.com/results/sk/sk1000171",
+        "tags": [
+          "Mitigation",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://blog.checkpoint.com/security/security-advisory-action-required-active-exploitation-of-cve-2026-85102-and-a-management-pre-authentication-vulnerability-cve-2026-93616/",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:43+00:00"
+  },
+  {
+    "cve_id": "CVE-2026-85102",
+    "cwe_ids": [
+      "CWE-295"
+    ],
+    "cvss_score": 9.8,
+    "severity": "CRITICAL",
+    "published": "2026-09-09",
+    "description": "Improper certificate trust validation during VPN negotiation in Check Point Quantum Security Gateway may allow an unauthenticated remote attacker to execute arbitrary code on the Gateway.",
+    "epss": 0.07546,
+    "epss_percentile": 0.94385,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Check Point",
+      "product": "Multiple Products",
+      "name": "Check Point Multiple Products Improper Certificate Validation Vulnerability",
+      "date_added": "2026-09-22",
+      "due_date": "2026-09-25",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "Check Point Security Gateway and Check Point Spark Firewall using Site to Site VPN or Remote Access VPN contain an improper certificate validation vulnerability which could allow an unauthenticated remote attacker to execute arbitrary code on the Gateway.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://support.checkpoint.com/results/sk/sk1000117",
+        "tags": [
+          "Mitigation",
+          "Patch",
+          "Vendor Advisory"
+        ]
+      },
+      {
+        "url": "https://blog.checkpoint.com/security/security-advisory-action-required-active-exploitation-of-cve-2026-85102-and-a-management-pre-authentication-vulnerability-cve-2026-93616/",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:46+00:00"
+  },
+  {
+    "cve_id": "CVE-2026-7273",
+    "cwe_ids": [
+      "CWE-121"
+    ],
+    "cvss_score": 8.8,
+    "severity": "HIGH",
+    "published": "2026-06-16",
+    "description": "A stack-based buffer overflow vulnerability in the CGI program of Zyxel GS1900-48HPv2 firmware versions through 2.90(ABTQ.1)C0 could allow a LAN-based, unauthenticated attacker to exploit the flaw and potentially execute OS commands via a crafted HTTP request.",
+    "epss": 0.02501,
+    "epss_percentile": 0.84283,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Zyxel",
+      "product": "GS1900 Series Switches",
+      "name": "Zyxel GS1900 Series Switches Stack-Based Buffer Overflow Vulnerability",
+      "date_added": "2026-09-21",
+      "due_date": "2026-09-24",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "Zyxel GS1900 series switches contain a stack-based buffer overflow vulnerability in the CGI program which could allow a LAN-based, unauthenticated attacker to exploit the flaw and potentially execute OS commands via a crafted HTTP request.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://www.zyxel.com/global/en/support/security-advisories/zyxel-security-advisory-for-stack-based-buffer-overflow-vulnerability-in-gs1900-series-switches-06-16-2026",
+        "tags": [
+          "Vendor Advisory"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:48+00:00"
+  },
+  {
+    "cve_id": "CVE-2025-39964",
+    "cwe_ids": [
+      "CWE-362"
+    ],
+    "cvss_score": 7.8,
+    "severity": "HIGH",
+    "published": "2025-10-13",
+    "description": "In the Linux kernel, the following vulnerability has been resolved:\n\ncrypto: af_alg - Disallow concurrent writes in af_alg_sendmsg\n\nIssuing two writes to the same af_alg socket is bogus as the\ndata will be interleaved in an unpredictable fashion.  Furthermore,\nconcurrent writes may create inconsistencies in the internal\nsocket state.\n\nDisallow this by adding a new ctx->write field that indiciates\nexclusive ownership for writing.",
+    "epss": 0.01276,
+    "epss_percentile": 0.69158,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Linux",
+      "product": "Kernel",
+      "name": "Linux Kernel Race Condition Vulnerability",
+      "date_added": "2026-09-18",
+      "due_date": "2026-09-21",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "Linux Kernel contains a race condition vulnerability which allows concurrent writes to the same AF_ALG socket causing data to be unpredictably interleaved and creating inconsistencies in the socket's internal state.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://git.kernel.org/stable/c/0f28c4adbc4a97437874c9b669fd7958a8c6d6ce",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://git.kernel.org/stable/c/1b34cbbf4f011a121ef7b2d7d6e6920a036d5285",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://git.kernel.org/stable/c/1f323a48e9b5ebfe6dc7d130fdf5c3c0e92a07c8",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://git.kernel.org/stable/c/45bcf60fe49b37daab1acee57b27211ad1574042",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://git.kernel.org/stable/c/7c4491b5644e3a3708f3dbd7591be0a570135b84",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://git.kernel.org/stable/c/9aee87da5572b3a14075f501752e209801160d3d",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://git.kernel.org/stable/c/e4c1ec11132ec466f7362a95f36a506ce4dc08c9",
+        "tags": [
+          "Patch"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:51+00:00"
+  },
+  {
+    "cve_id": "CVE-2026-53266",
+    "cwe_ids": [
+      "CWE-787"
+    ],
+    "cvss_score": 8.8,
+    "severity": "HIGH",
+    "published": "2026-06-25",
+    "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnetfilter: bridge: make ebt_snat ARP rewrite writable\n\nThe ebtables SNAT target keeps the Ethernet source address rewrite\nbehind skb_ensure_writable(skb, 0).  This is intentional: at the bridge\nebtables hooks the Ethernet header is addressed through\nskb_mac_header()/eth_hdr(), while skb->data points at the Ethernet\npayload.  Asking skb_ensure_writable() for ETH_HLEN bytes would check\nthe payload, not the Ethernet header, and would reintroduce the small\npacket regression fixed by commit 63137bc5882a.\n\nHowever, the optional ARP sender hardware address rewrite is different.\nIt writes through skb_store_bits() at an offset relative to skb->data:\n\n        skb_store_bits(skb, sizeof(struct arphdr), info->mac, ETH_ALEN)\n\nskb_header_pointer() only safely reads the ARP header; it does not make\nthe later sender hardware address range writable.  If that range is\nstill held in a nonlinear skb fragment backed by a splice-imported file\npage, skb_store_bits() maps the frag page and copies the new MAC address\ndirectly into it.\n\nEnsure the ARP SHA range is writable before reading the ARP header and\nbefore calling skb_store_bits().",
+    "epss": 0.00827,
+    "epss_percentile": 0.56283,
+    "kev": {
+      "listed": true,
+      "vendor_project": "Linux",
+      "product": "Kernel",
+      "name": "Linux Kernel Out-of-Bounds Write Vulnerability",
+      "date_added": "2026-09-18",
+      "due_date": "2026-09-21",
+      "required_action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "short_description": "Linux Kernel contains an out-of-bounds write vulnerability in the ebtables SNAT target which allows an ARP sender hardware address rewrite to write directly into a nonlinear socket-buffer fragment backed by a splice-imported file page. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version.",
+      "ransomware": "Unknown"
+    },
+    "references": [
+      {
+        "url": "https://git.kernel.org/stable/c/153ea96c806aea395daba907a4f88480b6ad5093",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://git.kernel.org/stable/c/67ba971ae02514d85818fe0c32549ab4bfa3bf49",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://git.kernel.org/stable/c/76280b78cc9f23bdc6438e10ad6dff148ef8375b",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://git.kernel.org/stable/c/afd64b59c3de9bbbdd3759e834fdc55cda716e0b",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://git.kernel.org/stable/c/b18675263db1147c8e1cab625400c13a0d87bd2d",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://git.kernel.org/stable/c/b7e91939ba9be805a62a257fa4e227dffbb88fa0",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://git.kernel.org/stable/c/bf84ad7c7a9ede46e31afaa41a1ba06a159e8c87",
+        "tags": [
+          "Patch"
+        ]
+      },
+      {
+        "url": "https://git.kernel.org/stable/c/c9b5ff59feffb92a147a84a5aa28acd2cb8ff4c5",
+        "tags": [
+          "Patch"
+        ]
+      }
+    ],
+    "fetched_at": "2026-10-13T08:26:53+00:00"
+  }
+]
