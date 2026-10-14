@@ -1,0 +1,35 @@
+transformers 4.55.2 | trl 0.21.0 | torch 2.14.1+cpu
+CPU 스레드: 4
+데이터: 500 100
+Tokenizing train dataset:   0%|          | 0/500 [00:00<?, ? examples/s]Tokenizing train dataset:   7%|▋         | 35/500 [00:00<00:01, 275.86 examples/s]Tokenizing train dataset:  13%|█▎        | 66/500 [00:00<00:01, 269.23 examples/s]Tokenizing train dataset:  20%|██        | 102/500 [00:00<00:01, 301.29 examples/s]Tokenizing train dataset:  28%|██▊       | 138/500 [00:00<00:01, 265.90 examples/s]Tokenizing train dataset:  34%|███▍      | 169/500 [00:00<00:01, 270.40 examples/s]Tokenizing train dataset:  40%|███▉      | 199/500 [00:00<00:01, 267.16 examples/s]Tokenizing train dataset:  47%|████▋     | 235/500 [00:00<00:01, 249.49 examples/s]Tokenizing train dataset:  52%|█████▏    | 261/500 [00:00<00:00, 250.27 examples/s]Tokenizing train dataset:  59%|█████▉    | 295/500 [00:01<00:00, 268.42 examples/s]Tokenizing train dataset:  67%|██████▋   | 334/500 [00:01<00:00, 255.49 examples/s]Tokenizing train dataset:  76%|███████▌  | 378/500 [00:01<00:00, 258.69 examples/s]Tokenizing train dataset:  82%|████████▏ | 409/500 [00:01<00:00, 265.75 examples/s]Tokenizing train dataset:  87%|████████▋ | 436/500 [00:01<00:00, 263.85 examples/s]Tokenizing train dataset:  93%|█████████▎| 466/500 [00:01<00:00, 267.85 examples/s]Tokenizing train dataset: 100%|█████████▉| 498/500 [00:01<00:00, 270.86 examples/s]Tokenizing train dataset: 100%|██████████| 500/500 [00:01<00:00, 252.43 examples/s]
+Truncating train dataset:   0%|          | 0/500 [00:00<?, ? examples/s]Truncating train dataset: 100%|██████████| 500/500 [00:00<00:00, 16210.25 examples/s]
+Tokenizing eval dataset:   0%|          | 0/100 [00:00<?, ? examples/s]Tokenizing eval dataset:  29%|██▉       | 29/100 [00:00<00:00, 262.09 examples/s]Tokenizing eval dataset:  60%|██████    | 60/100 [00:00<00:00, 276.66 examples/s]Tokenizing eval dataset:  91%|█████████ | 91/100 [00:00<00:00, 272.88 examples/s]Tokenizing eval dataset: 100%|██████████| 100/100 [00:00<00:00, 247.12 examples/s]
+Truncating eval dataset:   0%|          | 0/100 [00:00<?, ? examples/s]Truncating eval dataset: 100%|██████████| 100/100 [00:00<?, ? examples/s]
+trainable params: 2,179,072 || all params: 1,545,893,376 || trainable%: 0.1410
+  0%|          | 0/63 [00:00<?, ?it/s]C:\Users\wins\AppData\Local\uv\cache\archive-v0\geb525nbPkEHZXqH\Lib\site-packages\transformers\trainer.py:3757: FutureWarning: `torch.cpu.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cpu', args...)` instead.
+  ctx_manager = torch.cpu.amp.autocast(cache_enabled=cache_enabled, dtype=self.amp_dtype)
+[step 1/63] 스텝당 413초, 남은 시간 약 427분
+  2%|▏         | 1/63 [06:53<7:07:07, 413.34s/it][step 2/63] 스텝당 381초, 남은 시간 약 387분
+  3%|▎         | 2/63 [12:41<6:21:23, 375.14s/it][step 3/63] 스텝당 333초, 남은 시간 약 333분
+  5%|▍         | 3/63 [16:39<5:12:27, 312.46s/it][step 4/63] 스텝당 309초, 남은 시간 약 304분
+  6%|▋         | 4/63 [20:35<4:37:37, 282.33s/it][step 5/63] 스텝당 295초, 남은 시간 약 285분
+  8%|▊         | 5/63 [24:36<4:18:17, 267.20s/it][step 6/63] 스텝당 283초, 남은 시간 약 269분
+ 10%|▉         | 6/63 [28:20<4:00:06, 252.74s/it][step 7/63] 스텝당 275초, 남은 시간 약 256분
+ 11%|█         | 7/63 [32:01<3:46:11, 242.34s/it][step 8/63] 스텝당 275초, 남은 시간 약 252분
+ 13%|█▎        | 8/63 [36:37<3:51:45, 252.82s/it][step 9/63] 스텝당 272초, 남은 시간 약 245분
+ 14%|█▍        | 9/63 [40:51<3:48:08, 253.49s/it][step 10/63] 스텝당 268초, 남은 시간 약 237분
+ 16%|█▌        | 10/63 [44:37<3:36:25, 245.00s/it][log] {"loss": 0.6204, "grad_norm": 0.3575510084629059, "learning_rate": 0.00019357168190404936, "num_tokens": 17009.0, "mean_token_accuracy": 0.8090431056916714, "epoch": 0.16}
+                                                  {'loss': 0.6204, 'grad_norm': 0.3575510084629059, 'learning_rate': 0.00019357168190404936, 'num_tokens': 17009.0, 'mean_token_accuracy': 0.8090431056916714, 'epoch': 0.16}
+ 16%|█▌        | 10/63 [44:37<3:36:25, 245.00s/it][step 11/63] 스텝당 267초, 남은 시간 약 232분
+ 17%|█▋        | 11/63 [49:01<3:37:17, 250.72s/it][step 12/63] 스텝당 266초, 남은 시간 약 226분
+ 19%|█▉        | 12/63 [53:12<3:33:02, 250.64s/it][step 13/63] 스텝당 265초, 남은 시간 약 221분
+ 21%|██        | 13/63 [57:25<3:29:39, 251.59s/it][step 14/63] 스텝당 260초, 남은 시간 약 213분
+ 22%|██▏       | 14/63 [1:00:44<3:12:23, 235.57s/it][step 15/63] 스텝당 255초, 남은 시간 약 204분
+ 24%|██▍       | 15/63 [1:03:42<2:54:36, 218.27s/it][step 16/63] 스텝당 251초, 남은 시간 약 196분
+ 25%|██▌       | 16/63 [1:06:51<2:44:00, 209.37s/it][step 17/63] 스텝당 248초, 남은 시간 약 190분
+ 27%|██▋       | 17/63 [1:10:10<2:38:13, 206.37s/it][step 18/63] 스텝당 245초, 남은 시간 약 184분
+ 29%|██▊       | 18/63 [1:13:31<2:33:37, 204.83s/it][step 19/63] 스텝당 243초, 남은 시간 약 178분
+ 30%|███       | 19/63 [1:16:53<2:29:32, 203.93s/it][step 20/63] 스텝당 245초, 남은 시간 약 176분
+ 32%|███▏      | 20/63 [1:21:38<2:43:34, 228.25s/it][log] {"loss": 0.5202, "grad_norm": 0.32038936018943787, "learning_rate": 0.00016405931786981755, "num_tokens": 34268.0, "mean_token_accuracy": 0.8265532024204731, "epoch": 0.32}
+                                                    {'loss': 0.5202, 'grad_norm': 0.32038936018943787, 'learning_rate': 0.00016405931786981755, 'num_tokens': 34268.0, 'mean_token_accuracy': 0.8265532024204731, 'epoch': 0.32}
+ 32%|███▏      | 20/63 [1:21:38<2:43:34, 228.25s/it]
